@@ -1,16 +1,16 @@
 {
-    "name": "orhanerday/open-ai",
+    "name": "shenzhe/open-ai",
     "description": "OpenAI GPT-3 Api Client in PHP",
     "keywords": [
-        "orhanerday",
+        "shenzhe",
         "open-ai"
     ],
-    "homepage": "https://github.com/orhanerday/open-ai",
+    "homepage": "https://github.com/shenzhe/open-ai",
     "license": "MIT",
     "authors": [
         {
-            "name": "Orhan Erday",
-            "email": "orhanerday@gmail.com",
+            "name": "shenzhe",
+            "email": "shenzhe163@gmail.com",
             "role": "Developer"
         }
     ],
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Orhanerday\\OpenAi\\": "src"
+            "shenzhe\\OpenAi\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Orhanerday\\OpenAi\\Tests\\": "tests"
+            "shenzhe\\OpenAi\\Tests\\": "tests"
         }
     },
     "scripts": {
