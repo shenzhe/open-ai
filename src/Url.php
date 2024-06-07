@@ -1,12 +1,9 @@
 <?php
 
-namespace Orhanerday\OpenAi;
+namespace shenzhe\OpenAi;
 
 class Url
 {
-    public const ORIGIN = 'https://api.openai.com';
-    public const API_VERSION = 'v1';
-    public const OPEN_AI_URL = self::ORIGIN . "/" . self::API_VERSION;
 
     /**
      * @deprecated
@@ -15,7 +12,7 @@ class Url
      */
     public static function completionURL(string $engine): string
     {
-        return self::OPEN_AI_URL . "/engines/$engine/completions";
+        return "/engines/$engine/completions";
     }
 
     /**
@@ -23,7 +20,7 @@ class Url
      */
     public static function completionsURL(): string
     {
-        return self::OPEN_AI_URL . "/completions";
+        return "/completions";
     }
 
     /**
@@ -32,7 +29,7 @@ class Url
      */
     public static function editsUrl(): string
     {
-        return self::OPEN_AI_URL . "/edits";
+        return "/edits";
     }
 
     /**
@@ -41,7 +38,7 @@ class Url
      */
     public static function searchURL(string $engine): string
     {
-        return self::OPEN_AI_URL . "/engines/$engine/search";
+        return "/engines/$engine/search";
     }
 
     /**
@@ -50,7 +47,7 @@ class Url
      */
     public static function enginesUrl(): string
     {
-        return self::OPEN_AI_URL . "/engines";
+        return "/engines";
     }
 
     /**
@@ -59,7 +56,7 @@ class Url
      */
     public static function engineUrl(string $engine): string
     {
-        return self::OPEN_AI_URL . "/engines/$engine";
+        return "/engines/$engine";
     }
 
     /**
@@ -68,7 +65,7 @@ class Url
      */
     public static function classificationsUrl(): string
     {
-        return self::OPEN_AI_URL . "/classifications";
+        return "/classifications";
     }
 
     /**
@@ -77,7 +74,7 @@ class Url
      */
     public static function moderationUrl(): string
     {
-        return self::OPEN_AI_URL . "/moderations";
+        return "/moderations";
     }
 
     /**
@@ -86,7 +83,7 @@ class Url
      */
     public static function transcriptionsUrl(): string
     {
-        return self::OPEN_AI_URL . "/audio/transcriptions";
+        return "/audio/transcriptions";
     }
 
     /**
@@ -95,7 +92,7 @@ class Url
      */
     public static function translationsUrl(): string
     {
-        return self::OPEN_AI_URL . "/audio/translations";
+        return "/audio/translations";
     }
 
     /**
@@ -104,7 +101,7 @@ class Url
      */
     public static function filesUrl(): string
     {
-        return self::OPEN_AI_URL . "/files";
+        return "/files";
     }
 
     /**
@@ -113,7 +110,7 @@ class Url
      */
     public static function fineTuneUrl(): string
     {
-        return self::OPEN_AI_URL . "/fine_tuning/jobs";
+        return "/fine_tuning/jobs";
     }
 
     /**
@@ -122,7 +119,7 @@ class Url
      */
     public static function fineTuneModel(): string
     {
-        return self::OPEN_AI_URL . "/models";
+        return "/models";
     }
 
     /**
@@ -131,7 +128,7 @@ class Url
      */
     public static function answersUrl(): string
     {
-        return self::OPEN_AI_URL . "/answers";
+        return "/answers";
     }
 
     /**
@@ -140,7 +137,7 @@ class Url
      */
     public static function imageUrl(): string
     {
-        return self::OPEN_AI_URL . "/images";
+        return "/images";
     }
 
     /**
@@ -149,7 +146,7 @@ class Url
      */
     public static function embeddings(): string
     {
-        return self::OPEN_AI_URL . "/embeddings";
+        return "/embeddings";
     }
 
     /**
@@ -158,7 +155,7 @@ class Url
      */
     public static function chatUrl(): string
     {
-        return self::OPEN_AI_URL . "/chat/completions";
+        return "/chat/completions";
     }
 
     /**
@@ -167,7 +164,7 @@ class Url
      */
     public static function assistantsUrl(): string
     {
-        return self::OPEN_AI_URL . "/assistants";
+        return "/assistants";
     }
 
     /**
@@ -176,7 +173,7 @@ class Url
      */
     public static function threadsUrl(): string
     {
-        return self::OPEN_AI_URL . "/threads";
+        return "/threads";
     }
 
     /**
@@ -185,6 +182,6 @@ class Url
      */
     public static function ttsUrl(): string
     {
-        return self::OPEN_AI_URL . "/audio/speech";
+        return "/audio/speech";
     }
 }
