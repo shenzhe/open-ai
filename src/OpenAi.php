@@ -1,6 +1,6 @@
 <?php
 
-namespace Orhanerday\OpenAi;
+namespace shenzhe\OpenAi;
 
 use Exception;
 
@@ -14,7 +14,8 @@ class OpenAi
     private array $contentTypes;
     private int $timeout = 0;
     private object $stream_method;
-    private string $customUrl = "";
+    private string $customUrl = "https://api.openai.com";
+    private string $version = "v1";
     private string $proxy = "";
     private array $curlInfo = [];
 
@@ -720,7 +721,7 @@ class OpenAi
 
             $this->stream_method = $stream;
         }
-        
+
         $this->addAssistantsBetaHeader();
         $url = Url::threadsUrl() . '/' . $threadId . '/runs';
         $this->baseUrl($url);
@@ -791,7 +792,7 @@ class OpenAi
 
             $this->stream_method = $stream;
         }
-        
+
         $this->addAssistantsBetaHeader();
         $url = Url::threadsUrl() . '/' . $threadId . '/runs/' . $runId . '/submit_tool_outputs';
         $this->baseUrl($url);
@@ -917,6 +918,13 @@ class OpenAi
         }
     }
 
+    public function setVersion(string $version)
+    {
+        if ($version != '') {
+            $this->version = $version;
+        }
+    }
+
     /**
      * @param  array  $header
      * @return void
@@ -939,7 +947,7 @@ class OpenAi
             $this->headers[] = "OpenAI-Organization: $org";
         }
     }
-    
+
     /**
      * @param  string  $org
      */
@@ -953,10 +961,10 @@ class OpenAi
     /**
      * @return void
      */
-    private function addAssistantsBetaHeader(){ 
+    private function addAssistantsBetaHeader(){
         $this->headers[] = 'OpenAI-Beta: assistants='.$this->assistantsBetaVersion;
     }
-    
+
 
     /**
      * @param  string  $url
@@ -1021,8 +1029,6 @@ class OpenAi
      */
     private function baseUrl(string &$url)
     {
-        if ($this->customUrl != "") {
-            $url = str_replace(Url::ORIGIN, $this->customUrl, $url);
-        }
+        $url = $this->customUrl .'/' . $this->version . $url;
     }
 }
